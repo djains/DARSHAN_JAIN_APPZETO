@@ -1,0 +1,50 @@
+/* Checkout Page */
+.checkout-page { padding-top: calc(var(--navbar-height) + 40px); min-height: 100vh; }
+.checkout-layout { display: grid; grid-template-columns: 1fr 380px; gap: 32px; }
+
+.checkout-section-title { font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+
+/* Order summary card */
+.order-card { padding: 28px; border-radius: var(--radius-xl); background: var(--bg-card); border: 1px solid var(--border); }
+.order-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+.order-row:last-child { border-bottom: none; }
+.order-row-label { color: var(--text-muted); }
+.order-row-value { font-weight: 600; }
+.order-total-row { padding: 16px 0 0; }
+.order-total-label { font-size: 0.9rem; font-weight: 700; }
+.order-total-value { font-size: 1.5rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Timer */
+.checkout-timer {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px; border-radius: var(--radius-md);
+  background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25);
+  font-size: 0.9rem; font-weight: 600; color: var(--warning);
+  margin-bottom: 20px;
+}
+.timer-count { font-size: 1.2rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.timer-critical { color: var(--error); background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.25); }
+
+/* Payment mock */
+.payment-card { padding: 28px; border-radius: var(--radius-xl); background: var(--bg-card); border: 1px solid var(--border); position: sticky; top: calc(var(--navbar-height) + 24px); }
+.payment-scenarios { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.payment-scenario-btn {
+  padding: 14px 18px; border-radius: var(--radius-md); border: 1px solid var(--border);
+  background: transparent; color: var(--text-muted); cursor: pointer;
+  font-size: 0.875rem; font-weight: 600; text-align: left;
+  display: flex; align-items: center; gap: 10px;
+  transition: all var(--transition);
+}
+.payment-scenario-btn:hover { background: var(--bg-card-hover); color: var(--text-main); }
+.payment-scenario-btn.success:hover { border-color: var(--success); color: var(--success); background: rgba(34,197,94,0.08); }
+.payment-scenario-btn.failure:hover { border-color: var(--error); color: var(--error); background: rgba(239,68,68,0.08); }
+.payment-scenario-btn.timeout:hover { border-color: var(--warning); color: var(--warning); background: rgba(245,158,11,0.08); }
+.payment-scenario-btn.processing { opacity: 0.7; pointer-events: none; }
+
+.payment-seats { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.payment-seat-tag { padding: 4px 10px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); border-radius: var(--radius-full); font-size: 0.78rem; font-weight: 600; color: var(--primary); }
+
+@media (max-width: 900px) {
+  .checkout-layout { grid-template-columns: 1fr; }
+  .payment-card { position: static; }
+}
